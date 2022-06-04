@@ -10,7 +10,7 @@ import operator
 from keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
 
-img_path = "../../../dataset/split_data/3.jpg"
+img_path = "dataset/split_data/train/c0/img_34.jpg"
 class_labels = ['safe_driving', 'texting_right', 'talking_on_phone_right', 'texting_left', 'talking_on_phone_left',
                 'operating_radio', 'drinking', 'reaching_behind', 'doing_hair_makeup', 'talking_to_passanger']
     
