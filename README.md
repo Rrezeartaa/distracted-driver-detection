@@ -25,5 +25,5 @@ c9 | Talking to passenger
 * matplotlib 3.3.3
 * numpy 1.19.3
 
-The dataset used is available on Kaggle (https://www.kaggle.com/c/state-farm-distracted-driver-detection).
+The dataset used is available also on Kaggle (https://www.kaggle.com/c/state-farm-distracted-driver-detection).
 

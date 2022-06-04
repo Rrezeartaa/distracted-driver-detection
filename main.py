@@ -69,8 +69,10 @@ def upload_image():
                         prediction = "The person in the photo is " + word_split[0] + " " + word_split[1] + " " + word_split[2]
                     elif len(word_split) == 4:
                         prediction = "The person in the photo is " + word_split[0] + " " + word_split[1] + " " + word_split[2] + " " + word_split[3]
-                    else:
+                    elif len(word_split) == 2:
                         prediction = "The person in the photo is " + word_split[0] + " " + word_split[1]
+                    else:
+                        prediction = "The prediction cannot be made for this image, please upload a new one"
                 
                 return render_template('upload.html', filename=filename, prediction=prediction)
         else:
