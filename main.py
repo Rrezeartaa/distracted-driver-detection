@@ -13,6 +13,7 @@ import operator
 from keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
 
+# Llojet e extension te lejuara per imazhet te cilat do te perdoren per prediction
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
@@ -37,7 +38,7 @@ def upload_image():
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
                 image_file = app.config["UPLOAD_FOLDER"] + filename
-
+                # Perdorimi i class labels per tu paraqitur prediction varesisht prej pozites se ngasesit te automjetit
                 class_labels = ['safe_driving', 'texting_right', 'talking_on_phone_right', 'texting_left', 'talking_on_phone_left','operating_radio', 'drinking', 'reaching_behind', 'doing_hair_makeup', 'talking_to_passanger']
             
                 model = create_model()
@@ -63,6 +64,7 @@ def upload_image():
 
                 print()
                 count = 1
+                # Shfaqja e rezultatit/prediction varesisht prej pozites se shoferit ne automjet
                 for key, value in decoded_predictions[:1]:
                     word_split = key.split("_")
                     if len(word_split) == 3:
@@ -76,6 +78,8 @@ def upload_image():
                 
                 return render_template('upload.html', filename=filename, prediction=prediction)
         else:
+                # Nese nuk zgjidhet fajlli perkateisht imazhi i llojit te specifikuar me larte 
+                # atehere shfaqet validimi si me poshte
                 flash('Allowed image types are -> png, jpg, jpeg, gif')
                 return redirect(request.url)
 
