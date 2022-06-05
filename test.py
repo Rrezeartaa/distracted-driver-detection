@@ -12,7 +12,7 @@ model.compile(loss='categorical_crossentropy',
 
 batch_size = 16
 test_datagen = ImageDataGenerator(
-            rotation_range=10, # range (0-180) within which to randomly rotate pictures
+            rotation_range=10, # rangu (0-180) brenda së cilës do të rrotullohen rastësisht fotot
             rescale=1./255, 
             zoom_range=0.1, 
             horizontal_flip=False,
