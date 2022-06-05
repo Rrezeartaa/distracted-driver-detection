@@ -9,8 +9,10 @@ import numpy as np
 import operator
 from keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
-
+# Pathi per foton te cilen deshirojme te perdorim per prediction
 img_path = "dataset/split_data/train/c0/img_34.jpg"
+
+# Menyrat e prediction perkatesisht class labels 
 class_labels = ['safe_driving', 'texting_right', 'talking_on_phone_right', 'texting_left', 'talking_on_phone_left',
                 'operating_radio', 'drinking', 'reaching_behind', 'doing_hair_makeup', 'talking_to_passanger']
     
@@ -24,7 +26,7 @@ target_size=(150,150)
 
 image = load_img(img_path, target_size=target_size)
 
-image_arr = img_to_array(image) # convert from PIL Image to NumPy array
+image_arr = img_to_array(image) # Konvertimi nga PIL imazhi ne NumPy array
 
 image_arr = np.expand_dims(image_arr, axis=0)
 image_arr /= 255
@@ -37,6 +39,7 @@ decoded_predictions = sorted(decoded_predictions.items(), key=operator.itemgette
 
 print()
 count = 1
+# Shfaqja e rezultatit/prediction varesisht prej pozites se shoferit ne automjet
 for key, value in decoded_predictions[:1]:
     word_split = key.split("_")
     if len(word_split) == 3:
